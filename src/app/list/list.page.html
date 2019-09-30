@@ -4,24 +4,34 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      List
+
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-item>
+    <ion-label position="floating">Altura de partida en metros:</ion-label>
+    <ion-input [(ngModel)]="altura" type="number"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-button color="primary" shape="round" (click)='ngCalcular()'>Calcular</ion-button>
+  </ion-item>
+
   <ion-list>
-    <ion-item *ngFor="let item of items">
-      <ion-icon [name]="item.icon" slot="start"></ion-icon>
-      {{item.title}}
-      <div class="item-note" slot="end">
-        {{item.note}}
-      </div>
+    <ion-list-header>
+      <ion-label>Resultado</ion-label>
+    </ion-list-header>
+    <ion-list-header>
+        <ion-label color="primary">Tiempo (segundos)</ion-label>
+        <ion-label color="secondary">Altura (metros)</ion-label>
+        <ion-label color="dark">Velocidad (m/s)</ion-label>
+      </ion-list-header>
+    <ion-item *ngFor="let data of datos">
+        <ion-label color="primary">{{data.tiempo}}</ion-label>
+        <ion-label color="secondary">{{data.altura}}</ion-label>
+        <ion-label color="dark">{{data.velocidad}}</ion-label>
     </ion-item>
   </ion-list>
-  <!--
-    <div *ngIf="selectedItem" padding>
-      You navigated here from <b>{{selectedItem.title }}</b>
-    </div>
-  -->
 </ion-content>

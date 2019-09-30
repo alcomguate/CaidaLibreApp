@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Descenso de un paracaidista
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Altura del salto (metros):</ion-label>
+    <ion-input [(ngModel)]="altura" type="number"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Masa del paracaidista (kg):</ion-label>
+    <ion-input [(ngModel)]="masa" type="number"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Area del paracaidas (m^2):</ion-label>
+    <ion-input [(ngModel)]="area" type="number"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-button color="primary" shape="round" (click)='ngSaltar()'>Saltar</ion-button>
+  </ion-item>
+  <ion-item>
+    <ion-label>Velocidad actual: {{velocidad}}</ion-label>
+    <ion-label>Altura actual: {{alturaActual}}</ion-label>
+    <ion-label>Tiempo: {{tiempo}}</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-button color="primary" shape="round" (click)='ngAbrirParacaidas()'>Abrir paracaidas</ion-button>
+  </ion-item>
+</ion-content>
